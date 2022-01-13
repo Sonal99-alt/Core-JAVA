@@ -1,0 +1,17 @@
+
+
+class MyClass
+{
+	void disp(int k)
+	{
+	}
+	void disp(String s)
+	{
+	}
+}
+class A extends MyClass
+{
+	void disp(int k)
+	{
+	}
+}

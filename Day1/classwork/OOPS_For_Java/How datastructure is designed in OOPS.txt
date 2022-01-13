@@ -1,0 +1,101 @@
+Account
+	acc_id
+ 	name
+	balance
+		setName(), getName()
+		setBalance(), getBalance()
+
+Water-heater 
+color
+ 	size
+ 	maximum_temperature 
+	current_temperature
+switch_on()
+swith_off()
+
+
+Car
+	fuel_capacity
+current_speed
+top_speed
+number_of_wheels
+type_of_gearbox
+
+		start()
+		stop()
+		accelerate()
+apply_brakes()
+apply_clutch()
+
+
+suppose you are asked to write software for educational institute
+
+
+
+Student
+		member variables
+	int rollno
+	String name
+	int age
+	String qualification
+
+			member functions
+
+		getRollno()
+		getName()
+		getAge()
+		setQualification()
+		getQualification
+
+
+Course
+		member variables
+	int courseid;
+	String name;
+	int duration;
+	double fees;
+
+			member functions
+		getName()
+		getDuration()
+		setDuration()
+		getFees()
+		setFees()
+
+
+Employee
+		member variables
+	int id;
+	String name,emailid,desig;
+	double salary;
+
+		member functions
+		getName()
+		setEmail()
+		getEmail()
+		getDesig()
+		setSalary()
+		getSalary()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

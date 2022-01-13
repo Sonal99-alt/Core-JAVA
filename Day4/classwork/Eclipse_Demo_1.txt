@@ -1,0 +1,59 @@
+download Eclipse oxygen for 32 or 64 bit architecture as per your pc or laptop configuration.
+
+unzip the software inside "e:" or "d:"
+
+from the "Eclipse" folder , double click "eclipse.exe"
+
+	Eclipse will start
+
+
+on the right hand side top , you will see a small button for "perspective"
+	from that choose "Java"
+
+
+File
+	new
+		Java Project
+
+give a name. e.g. "MyPro"
+
+right lick on "MyPro"
+	new
+		class
+			MyClass
+
+select 
+		main function 
+
+do not select any other options
+
+you will get following class:
+
+public class MyClass
+{
+	public static void main(String args[])
+	{
+	}
+}
+
+write some message inside "main" function. e.g. System.out.println("hello");
+
+here good news is that you don't have to type "System.out.println"
+
+there is a shortcut
+
+type syso and press ctrl+space
+
+
+
+
+now right click on "MyClass.java"
+	Run
+		Run As
+			Java Application
+
+make sure it runs.
+
+
+
+

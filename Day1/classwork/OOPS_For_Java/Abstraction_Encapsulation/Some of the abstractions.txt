@@ -1,0 +1,49 @@
+Calculator
+	properties
+		memory
+			...
+	behaviors
+		add()
+		subtract()
+		multiply()
+		devide()
+		inverse()
+
+
+
+Television
+
+	properties
+		Circuit
+		....
+	behaviors
+		switchOn()
+		switchOff()
+		channelChange()
+		volumeChange()
+
+
+
+JuicerMixer
+	properties
+		RoterBlade
+		....
+	behaviors
+		switchOn()
+		switchOff()
+		setFruits()
+		getJuice()
+		changeSpeed()
+
+
+ abstraction of the wind-speed sensor can be expressed in the following specification: 
+ 
+Name:  WindSpeedSensor
+	 Responsibilities:  Keep track of the current wind speed. 
+	Operations:  
+		currentSpeed  
+		setLowSpeed  
+		setHighSpeed 
+	Attributes:  speed 
+ 
+

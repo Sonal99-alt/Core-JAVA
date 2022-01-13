@@ -1,0 +1,24 @@
+how do you generate setters and getters for an instance members?
+
+
+suppose you have a class
+
+class Shape
+{
+	private int width,height;
+
+}
+
+place the mouse pointer inside the class "Shape"
+
+right click
+
+source
+
+generate getters and setters
+
+select "width" and "height" members.
+
+click on "ok"
+
+make sure it generates setters and getters for width and height.

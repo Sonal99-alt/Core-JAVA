@@ -1,0 +1,11 @@
+
+
+interpreter is slow because it interprets one by one instructions inside
+bytecode.
+
+JIT compiler is faster becuase it converts a block of code from your bytecode into native code.
+
+JIT compiler requires cache memory in order to store converted code and for the first time at least JIT compiler takes some time to convert the bytecode.
+
+interpreter does not require any cache memory to store the converted code.
+

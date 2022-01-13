@@ -1,0 +1,8 @@
+// For all these assignments do not accept input from user, as we haven't learnt that. Just hardcode any variable and work on it.
+
+
+1)	display a table of a particular number           
+2)	using switch ….case   display whether character is vowel or not.
+3)	Display numbers  1 to 10 using do…. While loop
+4)	Display numbers from 3 to 30 except number 24  using while loop.
+5)	Using if…….else if….  Else,  display whether result is  fail, pass, second class , first class, Distinction etc.  
