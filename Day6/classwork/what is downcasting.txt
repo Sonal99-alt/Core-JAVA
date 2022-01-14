@@ -1,0 +1,7 @@
+what is downcasting?
+
+conversion from base type to derived type is called as "downcasting".
+
+When to use downcasting?
+
+when base reference referring to child object (upcasting) and u want to invoke a method of child class (on the same object) which is not there in the base class, you need to use downcasting.

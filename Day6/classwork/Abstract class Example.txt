@@ -1,0 +1,43 @@
+abstract class Person
+{
+	walk(),talk(),sleep(),eat()
+
+	abstract performDuties();
+}
+
+class HouseWife extends Person
+{
+
+}
+class Teacher extends Person
+{
+
+}
+class Soldier extends Person
+{
+}
+
+
+
+one more example
+
+public abstract class Course
+{
+	public void start()
+	{
+		// start process
+	}
+	public abstract double getFee();
+	public abstract void evaluate();
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+Interface is used when you want to define a contract and you don't know anything about implementation. (here it is total abstraction as you don't know anything.)

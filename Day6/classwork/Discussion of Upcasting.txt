@@ -1,0 +1,238 @@
+class base
+{
+	void disp()
+	{
+	}
+}
+class sub extends base
+{
+	void disp()
+	{
+	}
+}
+
+
+base ref=new sub();
+ref.disp();    // sub disp
+	or
+
+sub ref=new sub();
+ref.disp();  //  sub disp
+
+
+class Shape
+{
+	void draw()
+	{
+	}
+}
+class Triangle extends Shape
+{
+	void draw()
+	{
+		// Triangle logic
+	}
+}
+
+class Arc extends Shape
+{
+	void draw()
+	{
+		// Arc logic
+	}
+}
+class Poly extends Shape
+{
+	void draw()
+	{
+		// Poly logic
+	}
+}
+
+
+void perform()
+{
+	// invoke draw method based on user's choice
+	
+	user input
+
+	switch(choice)
+	{
+		case 'T' : Triangle tr=new Triangle();
+				tr.draw();
+		case 'A' :  Arc a=new Arc();
+				a.draw();
+		case 'P' : Poly p=new Poly();
+				p.draw();
+	}
+
+}
+
+
+
+Shape ref=new Triangle();
+
+Shape ref=new Circle();
+
+void perform(Shape ref)   // maintenance advantage
+{
+	ref.draw();
+}
+
+
+
+main()
+{
+	user input   // Triangle
+
+	perform(new Triangle());
+
+	perform(new Circle());
+}
+
+
+
+
+
+class FourWheeler
+{
+	void start()
+	{
+	}
+}
+class Car extends FourWheeler
+{
+	void start()
+	{
+		// Car start
+	}
+}
+class Bus extends FourWheeler
+{
+	void start()
+	{
+		// Bus start
+	}
+}
+
+
+
+void perform(FourWheeler ref)
+{
+	ref.start();
+}
+
+main()
+{
+	perform(new Car());
+	perform(new Bus());
+}
+
+
+
+
+
+class FourWheeler
+{
+	void start()
+	{
+	}
+	void stop()
+	{
+	}
+}
+class Car extends FourWheeler
+{
+	void start()
+	{
+		// Car start
+	}
+	void stop()
+	{
+		// Car stop
+	}
+}
+class Bus extends FourWheeler
+{
+	void start()
+	{
+		// Bus start
+	}
+	void stop()
+	{
+		// Bus stop
+	}
+}
+
+
+class Demo
+{
+
+ void perform(FourWheeler ref)
+{
+	ref.start();
+	ref.stop();
+}
+
+main()
+{
+	perform(new Car());
+	perform(new Bus());
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

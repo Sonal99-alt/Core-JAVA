@@ -1,0 +1,18 @@
+create a hierarchy
+
+				Animal
+
+					void makeSound()
+					
+override "makeSound()" in all the child classes.
+
+		Dog		Cat		Tiger
+							void hunting()
+
+
+
+write a class "AnimalDemo" with main and perform functions
+
+	perform function should be defined in such a way that it can accept any animal and invoke "makeSound()" function.
+
+	also make sure if "Tiger" is passed , its "hunting()" method also should be called.
