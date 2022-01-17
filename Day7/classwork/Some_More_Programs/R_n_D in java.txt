@@ -1,0 +1,64 @@
+public class Demo2
+{
+	void disp(Object o)
+	{
+		System.out.println("in Object disp");
+	}
+	void disp(String o)
+	{
+		System.out.println("in String disp");
+	}
+
+	public static void main(String args[])
+	{
+		Demo2 d=new Demo2();
+		d.disp("hello");
+		d.disp(null);
+		d.disp(10);
+	}
+}
+
+output:
+	in string disp
+	in string disp
+	in object disp
+
+
+
+
+
+
+
+
+
+
+cavaj output:
+
+import java.io.PrintStream;
+
+public class Trial
+{
+
+    public Trial()
+    {
+    }
+
+    void disp(Object obj)
+    {
+        System.out.println("in Object disp");
+    }
+
+    void disp(String s)
+    {
+        System.out.println("in String disp");
+    }
+
+    public static void main(String args[])
+    {
+        Trial trial = new Trial();
+        trial.disp("hello");
+        trial.disp(((String) (null)));
+        trial.disp(Integer.valueOf(10));
+    }
+}
+

@@ -1,0 +1,28 @@
+class Singleton
+{
+	private static Singleton singleton= new Singleton();
+
+	private Singleton()
+	{
+	}
+	public void disp1()
+	{
+	}
+	public void disp2()
+	{
+	}
+	public static Singleton getSingleton()
+	{
+		return singleton;
+	}
+}
+public class SingletonDemo
+{
+	main()
+	{
+		Singleton ref=Singleton.getSingleton();
+		ref.disp1();
+		ref.disp2();
+
+	}
+}
