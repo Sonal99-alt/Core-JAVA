@@ -1,0 +1,39 @@
+package datatypes_pro;
+
+
+enum Openmode
+{
+	PLAIN,BOLD,ITALIC
+}
+
+
+class MyComponent
+{
+	public 	void setStyle(Openmode mode)
+	{
+		switch(mode)
+		{
+			case PLAIN: System.out.println("plain");
+					break;
+			case BOLD: System.out.println("bold");
+					break;
+			case ITALIC: System.out.println("italic");
+					break;
+		}			
+	}
+}
+public class Demo1
+{
+	public static void main(String args[])
+	{
+		MyComponent mc=new MyComponent();
+		mc.setStyle(Openmode.BOLD);
+		mc.setStyle(Openmode.ITALIC);
+		mc.setStyle(Openmode.PLAIN);
+		// mc.setStyle(1); // will not compile hence there is no
+		// risk of unpredictable result
+		Every enum in java is derived from "Enum" class
+		System.out.println(Openmode.BOLD instanceof Enum);
+	
+	}
+}
