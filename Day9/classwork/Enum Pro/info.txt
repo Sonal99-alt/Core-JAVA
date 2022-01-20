@@ -1,3 +1,4 @@
 enum is a user defined data type.
 
-it is used to define set of predefined values. It helps in making the program more readable and also helps to reduce programming bugs. 
+it is used to define set of predefined values. It helps in making the program more readable and also 
+helps to reduce programming bugs. 

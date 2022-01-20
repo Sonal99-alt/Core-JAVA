@@ -1,8 +1,9 @@
 /*
 	command line arguments
 
-arguments which can be given to the running java program. it also means that arguments given to main function. in Java main function is always ready to accept command line arguments.
-	public static void main(String args[])
+arguments which can be given to the running java program. it also means that arguments given to main function. 
+in Java main function is always ready to accept command line arguments.
+public static void main(String args[])
 */
 
 
