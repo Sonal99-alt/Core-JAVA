@@ -2,8 +2,8 @@ In traditional programming, error detection, reporting, and handling often lead 
 use error code inside the main logic.
 Exceptions enable you to write the main flow of your code and to deal with the exceptional cases elsewhere.
 
-A second advantage of exceptions is the ability to propagate error reporting up the call stack of methods. i.e. if a method does 
-not want to handle an exception it can propagate it to the caller and so on. we did not have this advantage in traditional 
+A second advantage of exceptions is the ability to propagate error reporting up the call stack of methods. i.e. if a method 
+does not want to handle an exception it can propagate it to the caller and so on. we did not have this advantage in traditional 
 programming.
 
 Thid advantage is, because all exceptions thrown within a program are objects, the grouping or categorizing of exceptions is 

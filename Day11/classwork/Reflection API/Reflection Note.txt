@@ -1,4 +1,6 @@
-The reflection API represents, or reflects, the classes, interfaces, and objects in the current Java Virtual Machine. You'll want to use the reflection API if you are writing development tools such as debuggers, class browsers, and GUI builders. With the reflection API you can: 
+The reflection API represents, or reflects, the classes, interfaces, and objects in the current Java Virtual Machine. 
+You'll want to use the reflection API if you are writing development tools such as debuggers, class browsers, and GUI builders. 
+With the reflection API you can: 
 
 1) Determine the class of an object. 
 2) Get information about a class's modifiers, fields, methods, constructors, and superclasses. 
