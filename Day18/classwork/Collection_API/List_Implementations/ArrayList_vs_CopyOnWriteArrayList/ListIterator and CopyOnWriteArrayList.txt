@@ -1,0 +1,48 @@
+/* "remove(), set() and add()" operations are not allowed in case of ListIterator of  CopyOnWriteArrayList
+
+ */
+
+package core1;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+
+
+public class Third {
+
+	public static void main(String[] args) {
+		List<Integer> mylist=new CopyOnWriteArrayList<>();
+		mylist.add(10);
+		mylist.add(20);
+		mylist.add(30);
+		mylist.add(40);
+		System.out.println("Using ListIterator");
+		ListIterator<Integer> ltr=mylist.listIterator();
+		 
+		// ltr.set(100); // java.lang.UnsupportedOperationException
+		
+		while(ltr.hasNext())
+		{
+			int k=ltr.next();
+		/*	if(k==20)
+			{
+				ltr.remove(); // java.lang.UnsupportedOperationException
+			}*/
+			System.out.println(k);
+		}
+		// ltr.add(1000); // java.lang.UnsupportedOperationException
+		System.out.println("*********************");
+		while(ltr.hasPrevious())
+		{
+			int k=ltr.previous();
+			System.out.println(k);
+		}
+		System.out.println("*********************");
+		System.out.println("mylist is\t"+mylist);
+	}
+
+}
