@@ -5,9 +5,6 @@ class WelcomeComponent extends Component {
         return (
             <div>
                 <h1>Welcome!</h1>
-                <div>
-                    Welcome
-                </div>
             </div>
         )
     }

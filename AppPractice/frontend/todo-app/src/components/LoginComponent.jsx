@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import WelcomeComponent from './WelcomeComponent'
 
 class LoginComponent extends Component {
     constructor(props) {
@@ -18,10 +19,9 @@ class LoginComponent extends Component {
     }
 
     loginClicked() {
-        if(this.state.username==="in28minutes" && this.state.password==="dummy")
+        if(this.state.username==='in28minutes' && this.state.password==='dummy')
         {
-            this.setState({showSuccessMessage: true})
-            this.setState({hasLoginFailed: false})
+            this.props.navigate(`/welcome/${this.state.username}`)
         }
         else 
         {

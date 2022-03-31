@@ -3,14 +3,21 @@ import LoginComponent from './LoginComponent'
 import withNavigation from './WithNavigation'
 import withParams from './WithParams'
 import WelcomeComponent from './WelcomeComponent'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 class TodoApp extends Component {
     render() {
+        const LoginComponentWithNavigation  = withNavigation(LoginComponent)
         const WelcomeComponentWithParams = withParams(WelcomeComponent)
         return (
             <div>
-                <LoginComponent/>
-                <WelcomeComponentWithParams/>
+                <Router>
+                    <Routes>
+                        <Route path="/login" element={<LoginComponentWithNavigation/>}/>
+                        <Route path="/" element={<LoginComponentWithNavigation/>}/>
+                        <Route path="/welcome/:name" element={<WelcomeComponentWithParams/>}/>
+                    </Routes>
+                </Router>
             </div>
         )
     }
