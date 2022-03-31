@@ -1,0 +1,354 @@
+package vehicle;
+
+public class Vehicle 
+{
+	private String company, model, type, colour;
+	private int price, no;
+	public Vehicle(String company, String model, String type, String colour, int price, int no) {
+		super();
+		this.company = company;
+		this.model = model;
+		this.type = type;
+		this.colour = colour;
+		this.price = price;
+		this.no = no;
+	}
+	public String getCompany() {
+		return company;
+	}
+	public void setCompany(String company) {
+		this.company = company;
+	}
+	public String getModel() {
+		return model;
+	}
+	public void setModel(String model) {
+		this.model = model;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public String getColour() {
+		return colour;
+	}
+	public void setColour(String colour) {
+		this.colour = colour;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
+	@Override
+	public String toString() {
+		return "Vehicle [company=" + company + ", model=" + model + ", type=" + type + ", colour=" + colour + ", price="
+				+ price + ", no=" + no + "]";
+	}
+}
+*****************************************************************************************************************************************8
+
+package vehicle;
+
+import java.util.Scanner;
+
+public class Tester 
+{
+	public static void main(String[] args) 
+{
+		
+		LinkedList li = new LinkedList();
+		
+		li.addVehicleAtLastPosition("Lamborghini", "Aventador", "FourWheeler", 25000000, 1, "Black");
+		li.addVehicleAtLastPosition("Mercedes", "Gelandewagen", "FourWheeler", 24500000, 2, "Red");
+		li.addVehicleAtLastPosition("BMW", "K1600", "TwoWheeler", 2800000, 3, "White");
+		li.addVehicleAtLastPosition("HarleyDavidson", "Iron883", "TwoWheeler", 2811000, 4, "Iron");
+        
+        while(true) {
+        	
+        	System.out.println("######################MENU######################");
+    		System.out.println("       ***~Vehicle Object Linked List~***\n");
+    		System.out.println("0. Exit");
+    		System.out.println("1. Add Vehicle Object at Last Position");
+    		System.out.println("2. Add Vehicle Object at First Position");
+    		System.out.println("3. Delete Vehicle Object from Last Position");
+    		System.out.println("4. Delete Vehicle Object from First Position");
+    		System.out.println("5. Search Vehicle by Number");
+            System.out.println("6. Print All Vehicle Details");
+            System.out.println("7. Print Vehicle List in Reverse Order");
+            System.out.println("8. Sort Vehicle List by Price");
+            System.out.println("\n       ***~Vehicle Object Linked List~***");
+            System.out.println("######################MENU######################");
+        	
+        	@SuppressWarnings("resource")
+			Scanner sc = new Scanner(System.in);
+        	System.out.print("Enter the choice: ");
+            int choice = sc.nextInt();
+
+            switch(choice)
+            {
+            case 0:
+            	System.out.println("\n                                        ( ^-^)**Thanks for Visiting Our Menu! Have A Nice Day..**(^-^ )");
+            	System.exit(0);
+            case 1:
+            	System.out.print("Enter the values : ");
+            	li.addVehicleAtLastPosition(sc.next(), sc.next(), sc.next(), sc.nextInt(), sc.nextInt(), sc.next());
+            	break;
+            case 2:
+            	System.out.print("Enter the values : ");
+            	li.addVehicleAtFirstPosition(sc.next(), sc.next(), sc.next(), sc.nextInt(), sc.nextInt(), sc.next());
+            	break; 
+            case 3:
+            	li.deleteVehicleAtLastPosition();
+            	break;
+            case 4:
+            	li.deleteVehicleAtFirstPosition();
+            	break;
+            case 5:
+            	System.out.print("Enter Vehicle Number : ");
+            	li.searchVehicleByNo(sc.nextInt());
+            	break;
+            case 6:
+            	li.displayAllVehicleDetails();
+            	break;
+            case 7:
+            	li.reverseDisplayAllVehicleDetails();
+            	break;
+            case 8:
+            	li.sortVehicleByPrice();
+            	li.displayAllVehicleDetails();
+            	break;
+            default:
+            	System.out.println("You have Entered the wrong Choice! Please Enter Again..");
+            	break;
+            }
+        }
+	}
+}
+******************************************************************************************************************************************************************
+
+package vehicle;
+
+
+public class LinkedList 
+{
+class Node {
+	private Vehicle data;
+	private Node next;
+	
+	public Node(Vehicle data) {
+		this.data = data;
+		this.next = null;
+	}
+}
+
+private Node head;
+private int nodesCount;
+
+public LinkedList() {
+	head = null;
+	nodesCount = 0;
+}
+
+public boolean isListEmpty( ) {
+    return head == null;
+}
+
+public int getNodesCount( ) {
+    return this.nodesCount;
+}
+
+public void addVehicleAtLastPosition(String company, String model, String type, int price, int no, String colour) {
+	
+	Vehicle vehicle = new Vehicle(company, model, type, colour, no, price);
+	Node newNode = new Node(vehicle);
+	
+	if(isListEmpty()) {
+		head = newNode;
+		nodesCount++;
+	}
+	else {
+		Node temp = head;
+		
+		while(temp.next != null) {
+			temp = temp.next;
+		}
+		
+		temp.next = newNode;
+		nodesCount++;
+	}
+	
+	System.out.println();
+}
+
+public void addVehicleAtFirstPosition(String company, String model, String type, int price, int no, String colour) {
+	
+	Vehicle vehicle = new Vehicle(company, model, type, colour, no, price);
+	Node newNode = new Node(vehicle);
+	
+	if(isListEmpty()) {
+		head = newNode;
+		nodesCount++;
+	}
+	else {
+		newNode.next = head;
+		head = newNode;
+		nodesCount++;
+	}
+	
+	System.out.println();
+}
+
+public void deleteVehicleAtLastPosition( ) {
+	
+	if(isListEmpty()) {
+		System.out.println("List is Empty !!!\n");
+	}
+	else if(head.next == null) {
+		head = null;
+		System.out.println("Vehicle Object Deleted Successfully from the Last Position !!!");
+		nodesCount--;
+	}
+	else {
+		
+		Node temp = head;
+		
+		while(temp.next.next != null) {
+			temp = temp.next;
+		}
+		
+		temp.next = null;
+		System.out.println("Vehicle Object Deleted Successfully from the Last Position !!!");
+		nodesCount--;
+	}
+	
+	System.out.println();
+}
+
+public void deleteVehicleAtFirstPosition( ) {
+	
+	if(isListEmpty()) {
+		System.out.println("List is Empty !!!\n");
+	}
+	else if(head.next == null) {
+		head = null;
+		System.out.println("Vehicle Object Deleted Successfully from the First Position !!!");
+		nodesCount--;
+	}
+	else {
+		head = head.next;
+		System.out.println("Vehicle Object Deleted Successfully from the First Position !!!");
+		nodesCount--;
+	}
+	
+	System.out.println();
+}
+
+public void searchVehicleByNo(int number) {
+	
+	if(isListEmpty()) {
+		System.out.println("There is no any Vehicle by this Number because List is Empty !!!");
+	}
+	else {
+		Node temp = head;
+		
+		while(temp != null) {
+			
+			if(temp.data.getNo() == number) {
+				System.out.println(temp.data);
+				System.out.println();
+				return;
+			}
+			
+			temp = temp.next;
+		}
+		
+		System.out.println("Sorry! There is no such Vehicle by this Number..");
+	}
+	
+	System.out.println();
+}
+
+public void displayAllVehicleDetails() {
+	
+	if(isListEmpty()) {
+		System.out.println("List is Empty !!!\n");
+	}
+	else {
+		Node temp = head;
+		
+		while(temp != null) {
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+	
+	System.out.println();
+}
+
+public void reverseDisplayAllVehicleDetails(Node temp) {
+	
+	if(temp == null) {
+		return;
+	}
+	
+	reverseDisplayAllVehicleDetails(temp.next);
+	System.out.println(temp.data);
+}
+
+public void reverseDisplayAllVehicleDetails( ) {
+	
+	reverseDisplayAllVehicleDetails(head);
+	System.out.println();
+}
+
+public void sortVehicleByPrice() {
+	
+	Node temp = head;
+	boolean flag = true;
+	Node prev = null;
+	Node temp1 = null;
+	
+	for(int i=0; i<nodesCount && flag == true; i++) {
+		
+		flag = false;
+		
+		for(int j=0; j<nodesCount-1-i; j++) {
+			
+			if(temp1.data.getPrice() > temp1.next.data.getPrice()) {
+				flag = true;
+				if(temp1 == head) {
+					temp1 = temp1;
+    				temp1 = temp1.next;
+    				temp1.next = temp1.next;
+    				temp1.next = temp1;
+    				head = temp1;
+				}
+				else {
+					prev.next = temp1.next;
+					temp1 = temp1;
+					temp1 = temp1.next;
+					temp1.next = temp1.next;
+					temp1.next = temp1;
+					prev.next = temp1;
+					
+				}
+			}
+			
+			prev = temp1;
+			temp1 = temp1.next;
+		}
+		
+		temp1 = head;
+	}
+}
+}
