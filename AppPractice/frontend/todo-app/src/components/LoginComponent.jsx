@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import AuthenticatedService from './AuthenticatedService'
+import AuthenticationService from './AuthenticationService.js'
 
 class LoginComponent extends Component {
     constructor(props) {
@@ -21,7 +21,7 @@ class LoginComponent extends Component {
     loginClicked() {
         if(this.state.username==='in28minutes' && this.state.password==='dummy')
         {
-            AuthenticatedService.registerSuccessfulLogin(this.state.username, this.state.password)
+            AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password)
             this.props.navigate(`/welcome/${this.state.username}`)
         }
         else 

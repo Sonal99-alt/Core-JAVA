@@ -8,7 +8,7 @@ import ListTodosComponent from './ListTodosComponent'
 import ErrorComponent from './ErrorComponent'
 import AuthenticationRoute from './AuthenticationRoute'
 import LogoutComponent from './LogoutComponent'
-
+import HeaderComponent from './HeaderComponent'
 class TodoApp extends Component {
     render() {
         const LoginComponentWithNavigation  = withNavigation(LoginComponent)
@@ -16,6 +16,7 @@ class TodoApp extends Component {
         return (
             <div>
                 <Router>
+                    <HeaderComponent/>
                     <Routes>
                         <Route path="/login" element={<LoginComponentWithNavigation/>}/>
                         <Route path="/" element={<LoginComponentWithNavigation/>}/>
