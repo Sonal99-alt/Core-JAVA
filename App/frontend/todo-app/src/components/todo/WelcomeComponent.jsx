@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Link } from 'react-router-dom'
 import HelloWorldService from '../../api/todo/HelloWorldService'
 class WelcomeComponent extends Component {
 
@@ -51,8 +50,15 @@ class WelcomeComponent extends Component {
     }
 
     handleError(error) {
+        let errorMessage = '';
+        if(error.message)
+        errorMessage += error.message
+
+        if(error.response && error.response.data) {
+            errorMessage += error.response.data.message
+        }
         this.setState({
-            errorMessage: error.response.data.message
+            errorMessage: errorMessage
         })
     }
 }

@@ -20,18 +20,25 @@ class LoginComponent extends Component {
     }
 
     loginClicked() {
-        if(this.state.username==='in28minutes' && this.state.password==='dummy')
-        {
-            AuthenticationService.registerSuccessfulLogin(this.state.username,this.state.password)
-            this.props.navigate(`/welcome/${this.state.username}`)
-            // this.setState({showSuccessMessage: true})
-            // this.setState({hasLoginFailed: false})
-        }
-        else
-        {
-            this.setState({hasLoginFailed: true})
-            this.setState({showSuccessMessage: false})
-        }
+        // AuthenticationService.executeBasicAuthenticationService(this.state.username, this.state.password)
+        // .then (
+        //     () => {
+        //         AuthenticationService.registerSuccessfulLogin(this.state.username,this.state.password)
+        //         this.props.navigate(`/welcome/${this.state.username}`)
+        //     }).catch(() => {
+        //         this.setState({hasLoginFailed: true})
+        //         this.setState({showSuccessMessage: false})
+        //     })
+
+            AuthenticationService.executeJwtAuthenticationService(this.state.username, this.state.password)
+        .then (
+            (response) => {
+                AuthenticationService.registerSuccessfulLoginForJwt(this.state.username,response.data.token)
+                this.props.navigate(`/welcome/${this.state.username}`)
+            }).catch(() => {
+                this.setState({hasLoginFailed: true})
+                this.setState({showSuccessMessage: false})
+            })
     }
     render() {
         return (
@@ -42,7 +49,7 @@ class LoginComponent extends Component {
                 {this.state.showSuccessMessage && <div>Login Successful</div>}
                 User Name: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} />
                 Password: <input type="password" name="password" value={this.state.password} onChange={this.handleChange} />
-                <button className="btn btn" onClick={this.loginClicked}>Login</button>
+                <button className="btn btn-success" onClick={this.loginClicked}>Login</button>
                 </div>
             </div>
         )
