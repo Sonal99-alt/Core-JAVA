@@ -1,0 +1,5 @@
+package com.in28minutes.learnspringframework.sample.enterprise.flow;
+
+public class Controller {
+
+}

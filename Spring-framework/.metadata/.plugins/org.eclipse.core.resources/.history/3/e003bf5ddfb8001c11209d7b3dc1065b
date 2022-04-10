@@ -1,0 +1,43 @@
+package com.in28minutes.learnspringframework.sample.enterprise.flow;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
+//sending response
+@RestController
+public class Controller {
+	@Autowired
+	private BusinessService  businessService;
+	@GetMapping("/sum")
+	public long displaySum() {
+		return businessService.calculateSum();
+	}
+}
+
+//Business Logic
+@Component
+class BusinessService {
+	public long calculateSum() {
+		return 150;
+	}
+}
+
+//Getting data
+class DataService {
+	public List<Integer> retrieveData() {
+		return List.of(12, 334, 24);
+	}
+}
+
+
+
+
+
+
+
+

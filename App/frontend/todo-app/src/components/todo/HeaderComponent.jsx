@@ -1,21 +1,24 @@
-import React, {Component} from 'react'
-import AuthenticationService from './AuthenticationService'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import AuthenticationService from './AuthenticationService.js'
+
 
 class HeaderComponent extends Component {
     render() {
         const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
-        
+        //console.log(isUserLoggedIn);
+
         return (
             <header>
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                    <div><a href="https://www.in28minutes.com" className="navbar-brand">in28minutes</a></div>
+                    <div><a href="http://www.in28minutes.com" className="navbar-brand">in28Minutes</a></div>
                     <ul className="navbar-nav">
-                        {isUserLoggedIn && <li className="nav-link"><a href="/welcome/in28minutes" className="nav-link">Home</a></li>}
-                        {isUserLoggedIn && <li className="nav-link"><a href="/todos"className="nav-link" >Todos</a></li>}
+                        {isUserLoggedIn && <li><Link className="nav-link" to="/welcome/in28minutes">Home</Link></li>}
+                        {isUserLoggedIn && <li><Link className="nav-link" to="/todos">Todos</Link></li>}
                     </ul>
                     <ul className="navbar-nav navbar-collapse justify-content-end">
-                        {!isUserLoggedIn && <li className="nav-link"><a href="/login" className="nav-link">Login</a></li>}
-                        {isUserLoggedIn && <li className="nav-link"><a href="/logout" className="nav-link" to onClick={AuthenticationService.logout}>Logout</a></li>}
+                        {!isUserLoggedIn && <li><Link className="nav-link" to="/login">Login</Link></li>}
+                        {isUserLoggedIn && <li><Link className="nav-link" to="/logout" onClick={AuthenticationService.logout}>Logout</Link></li>}
                     </ul>
                 </nav>
             </header>
