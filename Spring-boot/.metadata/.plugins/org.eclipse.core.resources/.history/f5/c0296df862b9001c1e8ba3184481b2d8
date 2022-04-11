@@ -1,0 +1,5 @@
+package com.in28minutes.learnsprinngboot.courses.bean;
+
+public class Course {
+
+}
