@@ -1,0 +1,6 @@
+package com.in28minutes.database.databasedemo.jpa;
+
+
+public class PersonJpaRepository {
+
+}
